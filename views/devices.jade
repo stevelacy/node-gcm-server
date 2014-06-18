@@ -1,0 +1,8 @@
+.content
+	.box
+		if items
+			.items
+				each item in items
+					.item
+						| #{item._id}
+						.button(data-id="#{item._id}") Send
