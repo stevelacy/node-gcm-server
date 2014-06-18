@@ -57,6 +57,7 @@ a {
 }
 .items .item .button {
   flex: none;
+  margin-left: 10px;
 }
 body {
   width: 100%;
