@@ -1,10 +1,11 @@
 doctype html
 html
-	head
-		title GCM
-		include ./head
-	body
-		if user
-			include ./devices
-		else
-			include ./login
+  head
+    title GCM
+    include ./head
+  body
+    .spacer-100
+    if user
+      include ./devices
+    else
+      include ./login
