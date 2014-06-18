@@ -64,6 +64,15 @@ a {
   flex: none;
   margin-left: 10px;
 }
+.content,
+.box,
+.items,
+.item {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
 body {
   width: 100%;
   background: #efefef;
@@ -84,4 +93,9 @@ body {
   height: 100px;
   justify-content: center;
   align-items: center;
+}
+@media all and (max-width: 750px) {
+  .box {
+    width: 90%;
+  }
 }
