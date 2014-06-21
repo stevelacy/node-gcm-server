@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   var socket = io();
   mapLoad = 0;
+  var marker;
   function initialize() {
     var mapOptions = {
       zoom: 10,
@@ -15,10 +16,13 @@ $(document).ready(function() {
         map.setCenter(myLatLng);
         mapLoad = 1;
       }
-      var marker = new google.maps.Marker({
+      marker = new google.maps.Marker({
           position: myLatLng,
           map: map
       });
+    });
+    $('.clear').click(function(){
+      marker.setMap(null);
     });
   }
 

@@ -50,6 +50,10 @@ a {
 .button {
   padding: 10px;
   background: #cdcdcd;
+  cursor: default;
+}
+.margin-r-10 {
+  margin-right: 10px;
 }
 .green {
   background: #27ae60;
@@ -110,11 +114,6 @@ body {
   height: 100px;
   justify-content: center;
   align-items: center;
-}
-#map-canvas {
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
 }
 @media all and (max-width: 750px) {
   .box {
