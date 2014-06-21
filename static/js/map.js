@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var socket = io();
   mapLoad = 0;
-  var marker;
+  var markers = [];
   function initialize() {
     var mapOptions = {
       zoom: 10,
@@ -11,18 +11,25 @@ $(document).ready(function() {
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
     socket.on('gps', function(data){
-      var myLatLng = new google.maps.LatLng(data.lat, data.lon);
-      if (mapLoad === 0){
-        map.setCenter(myLatLng);
-        mapLoad = 1;
+      console.log(data.number, (location.hash).slice(1));
+      if (data.number == (location.hash).slice(1)){
+        var myLatLng = new google.maps.LatLng(data.lat, data.lon);
+        if (mapLoad === 0){
+          map.setCenter(myLatLng);
+          mapLoad = 1;
+        }
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map
+        });
+        markers.push(marker);
       }
-      marker = new google.maps.Marker({
-          position: myLatLng,
-          map: map
-      });
     });
+
     $('.clear').click(function(){
-      marker.setMap(null);
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
     });
   }
 

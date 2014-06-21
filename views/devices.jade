@@ -6,4 +6,4 @@
         .item
           | #{item.number}
           .button.red.panic(data-id="#{item._id}") Panic
-          a.button.green.gps(href="/map/#{item.number}" data-id="#{item._id}") GPS
+          a.button.green.gps(href="/map/#{item.number}##{item.number}" data-id="#{item._id}") GPS
