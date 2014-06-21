@@ -15,15 +15,31 @@ a {
   color: #171717;
 }
 .box-border,
+.header,
 .button,
 .items .item,
 .box {
   box-shadow: 0 1px 1px #cdcdcd;
 }
+.header {
+  display: flex;
+  width: 100%;
+  background: #efefef;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.header .box {
+  margin: 0;
+}
 .spacer,
+.spacer-25,
 .spacer-50,
 .spacer-100 {
   width: 100%;
+}
+.spacer-25 {
+  height: 25px;
 }
 .spacer-50 {
   height: 50px;
@@ -88,11 +104,17 @@ body {
   display: flex;
   background: #fafafa;
   padding: 15px;
+  margin-bottom: 50px;
 }
 .login {
   height: 100px;
   justify-content: center;
   align-items: center;
+}
+#map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 @media all and (max-width: 750px) {
   .box {
