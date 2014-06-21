@@ -5,7 +5,10 @@ Device = new Schema
   gcmId:
     type: String
     required: true
-  event:
+  number:
+    type: String
+    required: true
+  key:
     type: String
 
 

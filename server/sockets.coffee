@@ -31,8 +31,13 @@ io.on 'connection', (socket) ->
   return console.log 'socket error - user not authorized' unless socket.client.request.user?
   user = socket.client.request.user
   socket.join user.id
-  socket.on "send", (data) ->
-    send data.id, "Node and GCM",(err, res) ->
+
+  socket.on "panic", (data) ->
+    send data.id, "0", (err, res) ->
+      console.log err, res
+
+  socket.on "gps", (data) ->
+    send data.id, "1", (err, res) ->
       console.log err, res
 
 module.exports = io

@@ -8,7 +8,7 @@ Device = db.models.Device
 module.exports = (id, msg, cb) ->
   Device.findOne {_id: id}, (err, data) ->
     return cb err if err?
-    return cb "device not found" unless data?
+    return console.log "device not found" unless data?
 
     message = new gcm.Message()
     message.addDataWithKeyValue "message", msg
