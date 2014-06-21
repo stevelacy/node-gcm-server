@@ -4,5 +4,6 @@
     .items
       each item in items
         .item
-          | #{item._id}
-          .button.blue(data-id="#{item._id}") Send
+          | #{item.number}
+          .button.red.panic(data-id="#{item._id}") Panic
+          a.button.green.gps(href="/map/#{item.number}" data-id="#{item._id}") GPS
